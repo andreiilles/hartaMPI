@@ -26,23 +26,33 @@
         <a href="#">Bioinformatică</a>
     </div>
 
-    <!-- Page content -->
     <div class="container">
         <h1>Harta informaticii</h1>
-        <p></p>
-    </div>
+        <div id="pdf-container"></div>
+        <script src="pdf.js"></script>
+        <script src="pdf.worker.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const container = document.getElementById('pdf-container');
+                const url = 'C:\\xampp\\htdocs\\hartaMPI\\cmpalgo.pdf';
 
-    <!-- JavaScript for navbar functionality -->
-    <script>
-        const navbarLinks = document.querySelectorAll('.navbar a');
+                pdfjsLib.getDocument(url).promise.then(function (pdf) {
+                    pdf.getPage(1).then(function (page) {
+                        const viewport = page.getViewport({ scale: 1.5 });
+                        const canvas = document.createElement('canvas');
+                        const context = canvas.getContext('2d');
 
-        navbarLinks.forEach(link => {
-            link.addEventListener('click', function () {
-                navbarLinks.forEach(link => link.classList.remove('active'));
-                this.classList.add('active');
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+                        container.appendChild(canvas);
+
+                        page.render({ canvasContext: context, viewport: viewport });
+                    });
+                });
             });
-        });
-    </script>
+        </script>
+    </div>
+    <script src="javascript/navbar.js"></script>
 </body>
 
 </html>
