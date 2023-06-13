@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Harta Informaticii</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a class="active" href="#">Acasă</a>
+        <a href="#">Algoritmi și structuri de date</a>
+        <a href="#">Limbaje de programare</a>
+        <a href="#">Arhitectură</a>
+        <a href="#">Sisteme de operare și rețele</a>
+        <a href="#">Inginerie software</a>
+        <a href="#">Baze de date și regăsire de informație</a>
+        <a href="#">Inteligență artificială și roboți</a>
+        <a href="#">Grafică</a>
+        <a href="#">Interacțiunea om-computer</a>
+        <a href="#">Știință computațională</a>
+        <a href="#">Informatică organizatorică</a>
+        <a href="#">Bioinformatică</a>
+    </div>
+
+    <!-- Page content -->
+    <div class="container">
+        <h1>Harta informaticii</h1>
+        <p></p>
+    </div>
+
+    <!-- JavaScript for navbar functionality -->
+    <script>
+        const navbarLinks = document.querySelectorAll('.navbar a');
+
+        navbarLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                navbarLinks.forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

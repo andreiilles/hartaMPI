@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  display: flex;
+  justify-content: center; /* Center the navbar buttons horizontally */
+  padding: 10px 20px;
+}
+
+.navbar a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin: 0 5px; /* Adjust the margin to control the spacing around the buttons */
+  text-decoration: none;
+  border-radius: 5px; /* Add rounded corners to the navbar buttons */
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.navbar a:hover {
+  background-color: #555; /* Darken the background color on hover */
+}
+
+.navbar .active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* CSS styling for the rest of the page */
+.container {
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px 5px; /* Reduce the horizontal padding */
+  }
+
+  .navbar a {
+    margin: 5px;
+    flex-basis: calc(50% - 10px); /* Calculate the width with adjusted margin */
+    max-width: 150px; /* Set a maximum width for each button */
+  }
+}
